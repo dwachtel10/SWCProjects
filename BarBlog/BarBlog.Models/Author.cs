@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace BarBlog.Models
 {
-    public class Class1
+    public class Author
     {
+        public int AuthorID { get; set; }
+        public string AuthorName { get; set; }
     }
 }

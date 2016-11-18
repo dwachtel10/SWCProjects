@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BarBlog.BLL
+namespace BarBlog.Models
 {
-    public class Class1
+   public class Tag
     {
+        public int TagID { get; set; }
+        public string TagName { get; set; }
     }
 }
