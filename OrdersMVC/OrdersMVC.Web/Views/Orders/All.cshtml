@@ -1,0 +1,27 @@
+﻿@model List<OrdersMVC.Models.Order>
+@{
+    ViewBag.Title = "All";
+}
+
+<h2>All</h2>
+@Html.ActionLink("Add Order", "Add", "Orders")
+
+@if (Model.Any())
+{
+    <div class="container">
+        @foreach (var order in Model)
+        {
+            <div class="row">
+                <div class="col-lg-6">@Html.ActionLink($"{order.Id} - {order.CustomerName}",
+                                          "ViewOrder", "Orders", new {id = order.Id}, null)</div>
+                <div class="col-lg-6">
+                    @using (Html.BeginForm("ViewOrder2", "Orders", FormMethod.Get))
+                    {
+                        <input type="Hidden" name="thisId" id="thisId" value="@order.Id"/>
+                        <button class="btn btn-default">View Order</button>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+}

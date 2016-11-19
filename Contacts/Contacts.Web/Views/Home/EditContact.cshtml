@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "EditContact";
+}
+
+<h2>EditContact</h2>
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor((c = c.ContactId))
+<table>
+    <tbody>
+        <tr>
+            <td>@Html.LabelFor(c=>c.Name)</td>
+            <td>@Html.TextBoxFor(c=>c.Name)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(c => c.PhoneNumber)</td>
+            <td>@Html.TextBoxFor(c => c.PhoneNumber)</td>
+        </tr>
+        <tr>
+            <td>@Html.ActionLink("Cancel", "Index", "Home")</td>
+            <td><button>Add</button></td>
+        </tr>
+    </tbody>
+</table>
+}

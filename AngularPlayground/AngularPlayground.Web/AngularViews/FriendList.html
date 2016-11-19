@@ -1,0 +1,23 @@
+﻿<div class="row">
+    <a href="#/AddFriend" class="btn btn-primary">Add Friend</a>
+</div>
+<div class="row">
+    <div class="col-sm-8">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Age</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="friend in friends">
+                <td>{{{friend.Name}}}</td>
+                <td>{{{friend.Phone}}}</td>
+                <td>{{{friend.Age}}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

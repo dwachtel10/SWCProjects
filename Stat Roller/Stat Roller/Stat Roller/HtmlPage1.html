@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <script>
+var x = roll20 ();
+
+function roll20 ()
+{
+return Math.floor(Math.random()*20+1);
+}
+
+var a = roll6 ();
+var b = roll6 ();
+var c = roll6 ();
+
+function roll6 ()
+{
+return Math.floor(Math.random() * 6 + 1);
+}
+
+var CharAbilityName = new Array (“Strength; “Dexterity”, “Constitution”, “Intelligence”, “Wisdom”, “Charisma”);
+
+var CharAbilityScore = new Array (“0”, “0”,“0”,“0”,“0”,“0”);
+
+function StatBlckGen ()
+{
+for (i=0; i<6; i++)
+{
+var a = roll6 ();
+var b = roll6 ();
+var c = roll6 ();
+var d = a+b+c;
+
+CharAbilityScore [i] = d;
+
+document.write (CharAbilityName [i] + “ - ” + CharAbilityScore [i] + “<br>”);
+}
+
+}
+var StatRollButton = document.createElement(“button”);
+StatRollButton.innerHTML= “Generate Stats”;
+
+var body = document.getElementsByTagName(“body”)[0];
+body.appendChild(StatRollButton);
+
+function RollFunction ()
+{
+return StatBlckGen ();
+StatRollButton.innerHTML= “Reroll?”;
+body.appendChild(StatRollButton);
+}
+
+StatRollButton.addEventListener (“click”, RollFunction());
+
+    </script>
+</body>
+</html>

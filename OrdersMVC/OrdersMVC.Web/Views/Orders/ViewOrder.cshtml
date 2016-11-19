@@ -1,0 +1,31 @@
+﻿@model OrdersMVC.Models.Order
+
+@{
+    ViewBag.Title = "ViewOrder";
+}
+
+<h2>Order #@Model.Id</h2>
+@Html.ActionLink("Back", "All", "Orders")
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">Order Date</div>
+        <div class="col-sm-6">@Model.OrderDate.ToLongDateString()</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">Customer Name</div>
+        <div class="col-sm-6">@Model.CustomerName</div>
+    </div>
+@Html.Partial("_State", Model.State)
+    <div class="row">
+        <div class="col-sm-6">Total</div>
+        <div class="col-sm-6">@($"{Model.Total:C}")</div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        alert("Hello");
+    </script>
+    <script language="javascript" src="~/Scripts/app/dontcare.js"></script>
+}
